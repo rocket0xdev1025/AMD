@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Meme Days | $AMD</title>
+  <meta name="description" content="From now on, every day is Meme Day. Conform to the narrative nowadays. $AMD on Solana." />
+  <link rel="icon" href="logo.jpg" type="image/jpeg" />
+  <meta property="og:title" content="All Meme Days | $AMD" />
+  <meta property="og:description" content="From now on, every day is Meme Day. Conform to the narrative nowadays." />
+  <meta property="og:image" content="banner.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            jungle: {
+              950: "#3a0505",
+              900: "#5c0808",
+              800: "#8b1010",
+              700: "#b71c1c",
+              600: "#d32f2f",
+              500: "#e53935",
+              400: "#ff5252",
+              300: "#ff8a80",
+            },
+            cream: "#fff7f2",
+            banana: "#ffd54f",
+          },
+          fontFamily: {
+            display: ["Bangers", "cursive"],
+            fun: ["Fredoka", "sans-serif"],
+            body: ["Nunito", "sans-serif"],
+          },
+          boxShadow: {
+            glow: "0 0 40px rgba(229, 57, 53, 0.45)",
+            pop: "0 12px 0 #7a0f0f, 0 18px 30px rgba(0,0,0,0.35)",
+            popHover: "0 6px 0 #7a0f0f, 0 10px 20px rgba(0,0,0,0.3)",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --ca: "TBA";
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Nunito, sans-serif;
+      background: radial-gradient(1200px 700px at 50% -10%, #ff3b3b 0%, #c41e1e 38%, #7a0c0c 72%, #3a0505 100%);
+      color: #fff7f2;
+      overflow-x: hidden;
+    }
+
+    .noise::before {
+      content: "";
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      opacity: 0.07;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+    }
+
+    .vines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(255,213,79,0.08), transparent 22%),
+        radial-gradient(circle at 92% 18%, rgba(255,255,255,0.08), transparent 18%),
+        repeating-linear-gradient(118deg, transparent 0 46px, rgba(0,0,0,0.08) 46px 48px);
+    }
+
+    .gloss {
+      background-image: linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.04) 38%, rgba(0,0,0,0.18) 100%);
+    }
+
+    .card-3d {
+      background: linear-gradient(180deg, #e53935 0%, #b71c1c 55%, #8b1010 100%);
+      box-shadow:
+        inset 0 2px 0 rgba(255,255,255,0.35),
+        inset 0 -8px 18px rgba(0,0,0,0.28),
+        0 18px 40px rgba(0,0,0,0.35);
+    }
+
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      white-space: nowrap;
+      border-block: 3px solid rgba(255,255,255,0.18);
+      background: rgba(90, 8, 8, 0.55);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 2.5rem;
+      animation: ticker 22s linear infinite;
+      min-width: max-content;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-12px) rotate(2deg); }
+    }
+
+    @keyframes swing {
+      0%, 100% { transform: rotate(-8deg); }
+      50% { transform: rotate(8deg); }
+    }
+
+    @keyframes bounce-soft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes peel {
+      0% { transform: translateY(-120%) rotate(12deg); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(110vh) rotate(40deg); opacity: 0.15; }
+    }
+
+    .floaty { animation: floaty 4.5s ease-in-out infinite; }
+    .swing { animation: swing 3.2s ease-in-out infinite; transform-origin: top center; }
+    .bounce-soft { animation: bounce-soft 2.4s ease-in-out infinite; }
+
+    .banana-rain span {
+      position: absolute;
+      top: -40px;
+      font-size: 1.4rem;
+      animation: peel linear infinite;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .paw {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Ccircle cx='42' cy='52' r='16' fill='rgba(255,255,255,0.05)'/%3E%3Ccircle cx='22' cy='32' r='8' fill='rgba(255,255,255,0.05)'/%3E%3Ccircle cx='38' cy='22' r='8' fill='rgba(255,255,255,0.05)'/%3E%3Ccircle cx='56' cy='22' r='8' fill='rgba(255,255,255,0.05)'/%3E%3Ccircle cx='70' cy='34' r='8' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
+    }
+
+    .day-chip {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .day-chip:hover {
+      transform: translateY(-6px) rotate(-2deg);
+    }
+
+    .copy-ok {
+      animation: bounce-soft 0.6s ease;
+    }
+
+    .btn-pop {
+      box-shadow: 0 8px 0 #6d0c0c, 0 14px 24px rgba(0,0,0,0.28);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .btn-pop:hover { transform: translateY(-2px); }
+    .btn-pop:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #6d0c0c, 0 6px 10px rgba(0,0,0,0.25);
+    }
+
+    iframe { background: #1a0505; }
+  </style>
+</head>
+<body class="noise paw min-h-screen">
+  <div class="vines"></div>
+  <div id="banana-rain" class="banana-rain fixed inset-0 z-0 overflow-hidden" aria-hidden="true"></div>
+
+  <header class="sticky top-0 z-50">
+    <nav class="mx-auto mt-3 flex max-w-6xl items-center justify-between rounded-[28px] border border-white/20 bg-[#8b1010]/70 px-4 py-2.5 backdrop-blur-md sm:px-5">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="logo.jpg" alt="All Meme Days logo" class="h-12 w-12 rounded-2xl shadow-lg ring-2 ring-white/40" />
+        <div class="leading-tight">
+          <p class="font-display text-2xl tracking-wide text-white">AMD</p>
+          <p class="font-fun text-[11px] uppercase tracking-[0.18em] text-white/80">All Meme Days</p>
+        </div>
+      </a>
+      <div class="hidden items-center gap-6 font-fun text-sm text-white/90 md:flex">
+        <a href="#story" class="hover:text-banana">Story</a>
+        <a href="#howto" class="hover:text-banana">How to Buy</a>
+        <a href="#chart" class="hover:text-banana">Chart</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="https://x.com/AllMemeDaysSol" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-black ring-2 ring-white/20" aria-label="AMD on X">
+          <img src="x.png" alt="X" class="h-7 w-7 object-contain" />
+        </a>
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="btn-pop hidden rounded-2xl bg-white px-4 py-2.5 font-fun text-sm font-bold text-jungle-700 sm:inline-flex">
+          Buy Now
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="relative z-10">
+    <section class="mx-auto max-w-6xl px-4 pb-10 pt-8 sm:pt-12">
+      <div class="relative overflow-hidden rounded-[36px] border border-white/20 shadow-glow">
+        <img src="banner.png" alt="All Meme Days banner" class="h-48 w-full object-cover sm:h-64 md:h-80" />
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#5c0808]/80 via-transparent to-white/10"></div>
+        <div class="absolute bottom-4 left-4 flex items-center gap-3 sm:bottom-6 sm:left-6">
+          <img src="logo.jpg" alt="" class="floaty h-16 w-16 rounded-[22px] shadow-pop ring-2 ring-white/50 sm:h-20 sm:w-20" />
+          <div>
+            <p class="font-fun text-xs uppercase tracking-[0.28em] text-white/80">Solana meme coin</p>
+            <h1 class="font-display text-4xl tracking-wide text-white drop-shadow sm:text-5xl">$AMD</h1>
+          </div>
+        </div>
+        <svg class="swing absolute -top-2 right-8 hidden h-20 w-20 sm:block" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+          <path d="M40 8 C40 8 40 28 40 36" stroke="#ffd54f" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="28" cy="48" r="10" fill="#fff7f2"/>
+          <circle cx="52" cy="48" r="10" fill="#fff7f2"/>
+          <circle cx="40" cy="54" r="16" fill="#fff7f2"/>
+          <circle cx="34" cy="50" r="2.2" fill="#b71c1c"/>
+          <circle cx="46" cy="50" r="2.2" fill="#b71c1c"/>
+          <path d="M34 60c4 4 8 4 12 0" stroke="#b71c1c" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="font-fun text-banana text-sm uppercase tracking-[0.35em]">The calendar is canceled</p>
+        <h2 class="mx-auto mt-3 max-w-4xl font-display text-4xl leading-[1.05] tracking-wide text-white sm:text-6xl md:text-7xl">
+          From now on, every day is Meme Day
+        </h2>
+        <p class="mx-auto mt-5 max-w-2xl font-fun text-lg text-white/90 sm:text-xl">
+          Conform to the narrative nowadays. The timeline moved on. The monkey stayed. Welcome to <span class="text-banana">All Meme Days</span>.
+        </p>
+      </div>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="btn-pop inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-fun text-lg font-bold text-jungle-700">
+          <span aria-hidden="true">🍌</span> Buy Now
+        </a>
+        <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="btn-pop inline-flex items-center gap-2 rounded-full border-2 border-white bg-jungle-700 px-7 py-3.5 font-fun text-lg font-bold text-white">
+          Chart
+        </a>
+        <a href="https://x.com/AllMemeDaysSol" target="_blank" rel="noopener noreferrer" class="btn-pop inline-flex items-center gap-2 rounded-full bg-black px-6 py-3.5 font-fun text-lg font-bold text-white">
+          <img src="x.png" alt="" class="h-5 w-5 object-contain" /> Follow
+        </a>
+      </div>
+
+      <div class="mx-auto mt-8 max-w-3xl">
+        <div class="card-3d flex flex-col items-stretch gap-3 rounded-[28px] p-4 sm:flex-row sm:items-center sm:p-5">
+          <div class="min-w-0 flex-1">
+            <p class="font-fun text-[11px] uppercase tracking-[0.22em] text-white/70">Contract address</p>
+            <p id="ca-text" class="mt-1 truncate font-mono text-lg font-bold tracking-wide text-white sm:text-xl">TBA</p>
+          </div>
+          <button id="copy-ca" type="button" class="btn-pop shrink-0 rounded-2xl bg-white px-5 py-3 font-fun font-bold text-jungle-700">
+            Copy CA
+          </button>
+        </div>
+        <p id="copy-toast" class="mt-3 h-6 text-center font-fun text-sm text-banana opacity-0">Copied. Now go ape.</p>
+      </div>
+    </section>
+
+    <div class="marquee my-4 py-3">
+      <div class="marquee-track font-display text-2xl tracking-wide text-white">
+        <span>EVERY DAY IS MEME DAY</span><span>🍌</span><span>$AMD</span><span>🐵</span>
+        <span>CONFORM TO THE NARRATIVE</span><span>🍌</span><span>ALL MEME DAYS</span><span>🐵</span>
+        <span>FROM NOW ON</span><span>🍌</span><span>SOLANA</span><span>🐵</span>
+        <span>EVERY DAY IS MEME DAY</span><span>🍌</span><span>$AMD</span><span>🐵</span>
+        <span>CONFORM TO THE NARRATIVE</span><span>🍌</span><span>ALL MEME DAYS</span><span>🐵</span>
+        <span>FROM NOW ON</span><span>🍌</span><span>SOLANA</span><span>🐵</span>
+      </div>
+    </div>
+
+    <section id="story" class="mx-auto max-w-6xl px-4 py-16">
+      <div class="grid items-center gap-8 lg:grid-cols-2">
+        <div>
+          <p class="font-fun text-sm uppercase tracking-[0.3em] text-banana">Monkey manifesto</p>
+          <h3 class="mt-2 font-display text-5xl tracking-wide text-white sm:text-6xl">The narrative is now a lifestyle</h3>
+          <p class="mt-5 text-lg leading-relaxed text-white/90">
+            Culture used to wait for a holiday. Then the timeline decided memes do not clock out.
+            <strong class="text-white">From now on, every day is Meme Day</strong> — and $AMD is the token that
+            conformed first.
+          </p>
+          <p class="mt-4 text-lg leading-relaxed text-white/90">
+            All Meme Days is the red monkey on the timeline: loud, glossy, and permanently in season.
+            No leftover roadmap. No waiting for Friday. Just bananas, Solana, and the same joke on repeat until it becomes religion.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
+          <article class="day-chip card-3d rounded-[24px] p-4 text-center">
+            <p class="font-fun text-xs uppercase tracking-widest text-white/70">Mon</p>
+            <p class="mt-2 font-display text-3xl">MEME</p>
+          </article>
+          <article class="day-chip card-3d rounded-[24px] p-4 text-center">
+            <p class="font-fun text-xs uppercase tracking-widest text-white/70">Tue</p>
+            <p class="mt-2 font-display text-3xl">MEME</p>
+          </article>
+          <article class="day-chip card-3d rounded-[24px] p-4 text-center">
+            <p class="font-fun text-xs uppercase tracking-widest text-white/70">Wed</p>
+            <p class="mt-2 font-display text-3xl">MEME</p>
+          </article>
+          <article class="day-chip card-3d rounded-[24px] p-4 text-center">
+            <p class="font-fun text-xs uppercase tracking-widest text-white/70">Thu</p>
+            <p class="mt-2 font-display text-3xl">MEME</p>
+          </article>
+          <article class="day-chip card-3d rounded-[24px] p-4 text-center">
+            <p class="font-fun text-xs uppercase tracking-widest text-white/70">Fri</p>
+            <p class="mt-2 font-display text-3xl">MEME</p>
+          </article>
+          <article class="day-chip card-3d rounded-[24px] p-4 text-center">
+            <p class="font-fun text-xs uppercase tracking-widest text-white/70">Sat</p>
+            <p class="mt-2 font-display text-3xl">MEME</p>
+          </article>
+          <article class="day-chip card-3d col-span-2 rounded-[24px] p-4 text-center sm:col-span-4 lg:col-span-2">
+            <p class="font-fun text-xs uppercase tracking-widest text-white/70">Sun</p>
+            <p class="mt-2 font-display text-4xl">STILL MEME DAY</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="howto" class="mx-auto max-w-6xl px-4 py-8 pb-16">
+      <div class="mb-10 text-center">
+        <p class="font-fun text-sm uppercase tracking-[0.3em] text-banana">Four swings</p>
+        <h3 class="mt-2 font-display text-5xl tracking-wide text-white sm:text-6xl">How to Buy $AMD</h3>
+        <p class="mx-auto mt-3 max-w-xl text-white/85">Ape in on Solana. Wallet, SOL, swap, forever Meme Day.</p>
+      </div>
+
+      <ol class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <li class="card-3d relative overflow-hidden rounded-[28px] p-6">
+          <span class="font-display text-6xl text-white/20">01</span>
+          <div class="bounce-soft mt-2 text-4xl" aria-hidden="true">👛</div>
+          <h4 class="mt-3 font-fun text-2xl font-bold">Grab a Solana wallet</h4>
+          <p class="mt-2 text-white/85">Install Phantom or Solflare. That is your jungle pass. Keep the seed phrase off the timeline.</p>
+        </li>
+        <li class="card-3d relative overflow-hidden rounded-[28px] p-6">
+          <span class="font-display text-6xl text-white/20">02</span>
+          <div class="bounce-soft mt-2 text-4xl" aria-hidden="true">◎</div>
+          <h4 class="mt-3 font-fun text-2xl font-bold">Load it with SOL</h4>
+          <p class="mt-2 text-white/85">Buy SOL on an exchange, then send it to your wallet. Leave a little extra for network fees.</p>
+        </li>
+        <li class="card-3d relative overflow-hidden rounded-[28px] p-6">
+          <span class="font-display text-6xl text-white/20">03</span>
+          <div class="bounce-soft mt-2 text-4xl" aria-hidden="true">🔁</div>
+          <h4 class="mt-3 font-fun text-2xl font-bold">Open the swap</h4>
+          <p class="mt-2 text-white/85">Hit <a class="underline decoration-banana decoration-2 underline-offset-4" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer">Buy Now</a>, connect the wallet, and paste the $AMD CA if it is not already selected.</p>
+        </li>
+        <li class="card-3d relative overflow-hidden rounded-[28px] p-6">
+          <span class="font-display text-6xl text-white/20">04</span>
+          <div class="bounce-soft mt-2 text-4xl" aria-hidden="true">🐵</div>
+          <h4 class="mt-3 font-fun text-2xl font-bold">Swap SOL for $AMD</h4>
+          <p class="mt-2 text-white/85">Confirm the swap and join All Meme Days. From now on, every day is Meme Day. Conform.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="chart" class="mx-auto max-w-6xl px-4 pb-20">
+      <div class="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <p class="font-fun text-sm uppercase tracking-[0.3em] text-banana">Live jungle</p>
+          <h3 class="mt-2 font-display text-5xl tracking-wide text-white">Chart</h3>
+          <p class="mt-2 text-white/85">Dexscreener embed. The candles also think every day is Meme Day.</p>
+        </div>
+        <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="btn-pop rounded-full bg-white px-5 py-3 font-fun font-bold text-jungle-700">
+          Open Dexscreener
+        </a>
+      </div>
+      <div class="overflow-hidden rounded-[32px] border border-white/20 shadow-glow">
+        <iframe
+          title="Dexscreener chart for $AMD"
+          src="https://dexscreener.com/solana/TBA?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartDefaultOnMobile=1&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"
+          class="h-[420px] w-full sm:h-[560px] md:h-[640px]"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-white/15 bg-[#3a0505]/70">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-10 sm:flex-row">
+      <div class="flex items-center gap-3">
+        <img src="logo.jpg" alt="" class="h-12 w-12 rounded-2xl ring-2 ring-white/30" />
+        <div>
+          <p class="font-display text-2xl tracking-wide">All Meme Days</p>
+          <p class="font-fun text-xs uppercase tracking-[0.2em] text-white/70">$AMD · Solana</p>
+        </div>
+      </div>
+      <p class="max-w-md text-center font-fun text-sm text-white/80 sm:text-right">
+        From now on, every day is Meme Day. Conform to the narrative nowadays.
+      </p>
+      <a href="https://x.com/AllMemeDaysSol" target="_blank" rel="noopener noreferrer" class="grid h-12 w-12 place-items-center overflow-hidden rounded-2xl bg-black ring-2 ring-white/20" aria-label="AMD on X">
+        <img src="x.png" alt="X" class="h-7 w-7 object-contain" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const CA = "TBA";
+    const copyBtn = document.getElementById("copy-ca");
+    const toast = document.getElementById("copy-toast");
+    const caText = document.getElementById("ca-text");
+
+    caText.textContent = CA;
+
+    async function copyCA() {
+      try {
+        await navigator.clipboard.writeText(CA);
+      } catch (err) {
+        const range = document.createRange();
+        range.selectNodeContents(caText);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        document.execCommand("copy");
+        sel.removeAllRanges();
+      }
+      toast.classList.remove("opacity-0");
+      toast.classList.add("copy-ok");
+      copyBtn.textContent = "Copied";
+      setTimeout(() => {
+        toast.classList.add("opacity-0");
+        toast.classList.remove("copy-ok");
+        copyBtn.textContent = "Copy CA";
+      }, 1800);
+    }
+
+    copyBtn.addEventListener("click", copyCA);
+
+    const rain = document.getElementById("banana-rain");
+    const glyphs = ["🍌", "🐵", "🍌"];
+    for (let i = 0; i < 14; i += 1) {
+      const el = document.createElement("span");
+      el.textContent = glyphs[i % glyphs.length];
+      el.style.left = Math.random() * 100 + "%";
+      el.style.animationDuration = 8 + Math.random() * 10 + "s";
+      el.style.animationDelay = Math.random() * 8 + "s";
+      el.style.fontSize = 14 + Math.random() * 18 + "px";
+      rain.appendChild(el);
+    }
+  </script>
+</body>
+</html>
